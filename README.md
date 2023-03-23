@@ -8,14 +8,14 @@
 
 ## To do list:
 ~~At least one sequence~~
-1. Minimum 2 indexes:
+### 1. Minimum 2 indexes:
 - MM_Ratings, MM_Movies, MM_Actors, MM_MovieActors
-2. Minimum 2 triggers:
+### 2. Minimum 2 triggers:
 - Data entry, updating, Trigger to update ratings, error logging
-3. Minimum 2 procedures
+### 3. Minimum 2 procedures
 - include exceptions [], cursors
-4. Minimum 2 functions:
+### 4. Minimum 2 functions:
 - include exceptions
-5. Packages:
+### 5. Packages:
 - Using at least 2x procedures, 2x functions
-6. Global, private variables / constructs
+### 6. Global, private variables / constructs
