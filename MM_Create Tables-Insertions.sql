@@ -21,7 +21,6 @@ CREATE SEQUENCE actor_id_seq
     INCREMENT BY 1
     NOCACHE
     NOCYCLE;
-
 CREATE TABLE MM_Actors (
     actor_id Number(6) DEFAULT actor_id_seq.NEXTVAL PRIMARY KEY,
     actor_name VARCHAR(100)
@@ -74,6 +73,13 @@ CREATE TABLE MM_MovieActors (
     FOREIGN KEY (actor_id) REFERENCES MM_Actors(actor_id)
 );
 
+CREATE TABLE MM_Recommendations (
+    recommendation_id number(6) PRIMARY KEY,
+    user_id number(6),
+    movie_id number(6),
+    FOREIGN KEY (user_id) REFERENCES MM_Users(user_id),
+    FOREIGN KEY (movie_id) REFERENCES MM_Movies(movie_id)
+);
 
 UPDATE MM_Movies 
 SET average_rating = (
