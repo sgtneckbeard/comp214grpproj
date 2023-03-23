@@ -8,10 +8,12 @@
 
 ## To do list:
 ~~At least one sequence~~
-* Minimum 2 indexes
+* Minimum 2 indexes.
 
-MM_Ratings, MM_Movies, MM_Actors, MM_MovieActors
-* Minimum 2 triggers (data entry, updating)
+(MM_Ratings, MM_Movies, MM_Actors, MM_MovieActors)
+* Minimum 2 triggers (data entry, updating).
+
+(Trigger to update ratings, create/replace
 * Minimum 2 procedures (include exceptions, cursors)
 * Minimum 2 functions (include exceptions)
 * Packages (Using at least 2x procedures, 2x functions)
