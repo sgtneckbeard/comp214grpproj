@@ -7,7 +7,7 @@
 
 
 ## To do list:
-* At least one seqence
+~~* At least one seqence~~
 * Minimum 2 indexes
 * Minimum 2 triggers (data entry, updating)
 * Minimum 2 procedures (include exceptions, cursors)
