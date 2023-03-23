@@ -1,4 +1,3 @@
-DROP TABLE MM_Recommendations;
 DROP TABLE MM_MovieActors;
 DROP TABLE MM_Ratings;
 DROP TABLE MM_Movies;
