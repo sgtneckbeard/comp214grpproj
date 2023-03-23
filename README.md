@@ -13,7 +13,7 @@
 ### 2. Minimum 2 triggers:
 - Data entry, updating, Trigger to update ratings, error logging
 ### 3. Minimum 2 procedures
-- include exceptions [], cursors
+- include exceptions, cursors
 ### 4. Minimum 2 functions:
 - include exceptions
 ### 5. Packages:
