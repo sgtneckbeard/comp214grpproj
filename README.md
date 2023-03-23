@@ -10,7 +10,7 @@
 ~~At least one sequence~~
 * Minimum 2 indexes
 
-⋅⋅⋅ MM_Ratings, MM_Movies, MM_Actors, MM_MovieActors
+MM_Ratings, MM_Movies, MM_Actors, MM_MovieActors
 * Minimum 2 triggers (data entry, updating)
 * Minimum 2 procedures (include exceptions, cursors)
 * Minimum 2 functions (include exceptions)
