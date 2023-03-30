@@ -157,36 +157,36 @@ INSERT INTO MM_Genres (genre_id, genre_name) VALUES (5, 'Comedy');
 
 
 -- Movies
-INSERT INTO MM_Movies (movie_id, movie_title, release_year, genre_id, director_id, average_rating, description)
-VALUES (1, 'The Shawshank Redemption', 1994, 1, 1, 9.3, 'Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.');
-INSERT INTO MM_Movies (movie_id, movie_title, release_year, genre_id, director_id, average_rating, description)
-VALUES (2, 'The Godfather', 1972, 1, 2, 9.2, 'The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.');
-INSERT INTO MM_Movies (movie_id, movie_title, release_year, genre_id, director_id, average_rating, description)
-VALUES (3, 'The Dark Knight', 2008, 3, 3, 9.0, 'When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.');
-INSERT INTO MM_Movies (movie_id, movie_title, release_year, genre_id, director_id, average_rating, description)
-VALUES (4, 'Pulp Fiction', 1994, 4, 4, 8.9, 'The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.');
-INSERT INTO MM_Movies (movie_id, movie_title, release_year, genre_id, director_id, average_rating, description)
-VALUES (5, 'The Lord of the Rings: The Fellowship of the Ring', 2001, 2, 5, 8.8, 'A young hobbit, Frodo, who has found the One Ring that belongs to the Dark Lord Sauron, begins his journey with eight companions to Mount Doom, the only place where it can be destroyed.');
-INSERT INTO MM_Movies (movie_id, movie_title, release_year, genre_id, director_id, average_rating, description)
-VALUES (6, 'Schindler''s List', 1993, 1, 6, 8.9, 'In Poland during World War II, Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution by the Nazis.');
-INSERT INTO MM_Movies (movie_id, movie_title, release_year, genre_id, director_id, average_rating, description)
-VALUES (7, 'Goodfellas', 1990, 4, 7, 8.7, 'The story of Henry Hill and his life in the mob, covering his relationship with his wife Karen Hill and his mob partners Jimmy Conway and Tommy DeVito in the Italian-American crime syndicate.');
-INSERT INTO MM_Movies (movie_id, movie_title, release_year, genre_id, director_id, average_rating, description)
-VALUES (8, 'Titanic', 1997, 1, 8, 7.8, 'A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.');
-INSERT INTO MM_Movies (movie_id, movie_title, release_year, genre_id, director_id, average_rating, description)
-VALUES (9, 'Psycho', 1960, 1, 9, 8.5, 'A Phoenix secretary embezzles $40,000 from her employer''s client, goes on the run, and checks into a remote motel run by a young man under the domination of his mother.');
-INSERT INTO MM_Movies (movie_id, movie_title, release_year, genre_id, director_id, average_rating, description)
-VALUES (10, 'The Shining', 1980, 1, 10, 8.4, 'A family heads to an isolated hotel for the winter where a sinister presence influences the father into violence, while his psychic son sees horrific forebodings from both past and future.');
-INSERT INTO MM_Movies (movie_id, movie_title, release_year, genre_id, director_id, average_rating, description)
-VALUES (11, 'Edward Scissorhands', 1990, 5, 11, 7.9, 'A gentle man with scissors for hands is brought into a new community after living in isolation.');
-INSERT INTO MM_Movies (movie_id, movie_title, release_year, genre_id, director_id, average_rating, description)
-VALUES (12, 'Fight Club', 1999, 1, 12, 8.8, 'An insomniac office worker and a devil-may-care soapmaker form an underground fight club that evolves into something much, much more.');
-INSERT INTO MM_Movies (movie_id, movie_title, release_year, genre_id, director_id, average_rating, description)
-VALUES (13, 'Gladiator', 2000, 3, 13, 8.5, 'A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.');
-INSERT INTO MM_Movies (movie_id, movie_title, release_year, genre_id, director_id, average_rating, description)
-VALUES (14, 'Little Women', 2019, 1, 14, 7.9, 'Jo March reflects back and forth on her life, telling the beloved story of the March sisters - four young women each determined to live life on her own terms.');
-INSERT INTO MM_Movies (movie_id, movie_title, release_year, genre_id, director_id, average_rating, description)
-VALUES (15, 'Lost in Translation', 2003, 1, 15, 7.7, 'A faded movie star and a neglected young woman form an unlikely bond after crossing paths in Tokyo.');
+INSERT INTO MM_Movies (movie_id, movie_title, release_year,  director_id, average_rating, description)
+VALUES (1, 'The Shawshank Redemption', 1994, 1, 9.3, 'Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.');
+INSERT INTO MM_Movies (movie_id, movie_title, release_year,  director_id, average_rating, description)
+VALUES (2, 'The Godfather', 1972, 2, 9.2, 'The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.');
+INSERT INTO MM_Movies (movie_id, movie_title, release_year,  director_id, average_rating, description)
+VALUES (3, 'The Dark Knight', 2008, 3, 9.0, 'When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.');
+INSERT INTO MM_Movies (movie_id, movie_title, release_year,  director_id, average_rating, description)
+VALUES (4, 'Pulp Fiction', 1994, 4, 8.9, 'The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.');
+INSERT INTO MM_Movies (movie_id, movie_title, release_year,  director_id, average_rating, description)
+VALUES (5, 'The Lord of the Rings: The Fellowship of the Ring', 2001, 5, 8.8, 'A young hobbit, Frodo, who has found the One Ring that belongs to the Dark Lord Sauron, begins his journey with eight companions to Mount Doom, the only place where it can be destroyed.');
+INSERT INTO MM_Movies (movie_id, movie_title, release_year,  director_id, average_rating, description)
+VALUES (6, 'Schindler''s List', 1993, 6, 8.9, 'In Poland during World War II, Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution by the Nazis.');
+INSERT INTO MM_Movies (movie_id, movie_title, release_year,  director_id, average_rating, description)
+VALUES (7, 'Goodfellas', 1990, 7, 8.7, 'The story of Henry Hill and his life in the mob, covering his relationship with his wife Karen Hill and his mob partners Jimmy Conway and Tommy DeVito in the Italian-American crime syndicate.');
+INSERT INTO MM_Movies (movie_id, movie_title, release_year,  director_id, average_rating, description)
+VALUES (8, 'Titanic', 1997, 8, 7.8, 'A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.');
+INSERT INTO MM_Movies (movie_id, movie_title, release_year, director_id, average_rating, description)
+VALUES (9, 'Psycho', 1960, 9, 8.5, 'A Phoenix secretary embezzles $40,000 from her employer''s client, goes on the run, and checks into a remote motel run by a young man under the domination of his mother.');
+INSERT INTO MM_Movies (movie_id, movie_title, release_year, director_id, average_rating, description)
+VALUES (10, 'The Shining', 1980, 10, 8.4, 'A family heads to an isolated hotel for the winter where a sinister presence influences the father into violence, while his psychic son sees horrific forebodings from both past and future.');
+INSERT INTO MM_Movies (movie_id, movie_title, release_year, director_id, average_rating, description)
+VALUES (11, 'Edward Scissorhands', 1990, 11, 7.9, 'A gentle man with scissors for hands is brought into a new community after living in isolation.');
+INSERT INTO MM_Movies (movie_id, movie_title, release_year, director_id, average_rating, description)
+VALUES (12, 'Fight Club', 1999, 12, 8.8, 'An insomniac office worker and a devil-may-care soapmaker form an underground fight club that evolves into something much, much more.');
+INSERT INTO MM_Movies (movie_id, movie_title, release_year, director_id, average_rating, description)
+VALUES (13, 'Gladiator', 2000, 13, 8.5, 'A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.');
+INSERT INTO MM_Movies (movie_id, movie_title, release_year, director_id, average_rating, description)
+VALUES (14, 'Little Women', 2019, 14, 7.9, 'Jo March reflects back and forth on her life, telling the beloved story of the March sisters - four young women each determined to live life on her own terms.');
+INSERT INTO MM_Movies (movie_id, movie_title, release_year, director_id, average_rating, description)
+VALUES (15, 'Lost in Translation', 2003, 15, 7.7, 'A faded movie star and a neglected young woman form an unlikely bond after crossing paths in Tokyo.');
 
 
 -- MovieActors
