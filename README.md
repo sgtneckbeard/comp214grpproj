@@ -10,7 +10,9 @@
 ~~At least one sequence~~
 ### Add movie-genre bridge table!!!
 ### 1. Minimum 2 indexes:
-- MM_Ratings, MM_Movies, MM_Actors, MM_MovieActors
+- 1. MM_Ratings 
+- 2. MM_Movies
+- 3. MM_Actors
 ### 2. Minimum 2 triggers:
 - Data entry, updating, Trigger to update ratings, error logging
 - 1. Add log error table
