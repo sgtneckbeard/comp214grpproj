@@ -21,6 +21,7 @@
 - include exceptions, cursors
 - 1. Add new movie Procedures
 - 2. Get top rated movies Procedure
+- 3. Add new user
 ### 4. Minimum 2 functions:
 - include exceptions
 - 1. Get all movies from one actor function
