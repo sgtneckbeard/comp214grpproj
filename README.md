@@ -13,13 +13,15 @@
 - MM_Ratings, MM_Movies, MM_Actors, MM_MovieActors
 ### 2. Minimum 2 triggers:
 - Data entry, updating, Trigger to update ratings, error logging
+- 1. Add log error table
+- 2. Update average rating
 ### 3. Minimum 2 procedures
 - include exceptions, cursors
 - 1. Add new movie Procedures
 - 2. Get top rated movies Procedure
 ### 4. Minimum 2 functions:
 - include exceptions
-- 1. Get all movies from one actor Function
+- 1. Get all movies from one actor function
 - 2. 
 ### 5. Packages:
 - Using at least 2x procedures, 2x functions
