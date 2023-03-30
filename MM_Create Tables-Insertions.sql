@@ -2,7 +2,6 @@ DROP TABLE MM_MovieActors CASCADE CONSTRAINTS;
 DROP TABLE MM_MovieGenre CASCADE CONSTRAINTS;
 DROP TABLE MM_Ratings CASCADE CONSTRAINTS;
 DROP TABLE MM_Movies CASCADE CONSTRAINTS;
-DROP TABLE MM_Directors CASCADE CONSTRAINTS;
 DROP TABLE MM_Genres CASCADE CONSTRAINTS;
 DROP TABLE MM_Actors CASCADE CONSTRAINTS;
 DROP TABLE MM_Users CASCADE CONSTRAINTS;
@@ -21,13 +20,14 @@ CREATE SEQUENCE actor_id_seq
     INCREMENT BY 1
     NOCACHE
     NOCYCLE;
+
 CREATE TABLE MM_Actors (
-    actor_id Number(6) DEFAULT actor_id_seq.NEXTVAL PRIMARY KEY,
+    actor_id Number(6)  PRIMARY KEY,
     actor_name VARCHAR(100)
 );
 
 CREATE TABLE MM_Users (
-    user_id Number(6) DEFAULT user_id_seq.NEXTVAL PRIMARY KEY,
+    user_id Number(6)  PRIMARY KEY,
     username VARCHAR(50),
     password VARCHAR(25),
     email VARCHAR(100)
@@ -45,8 +45,7 @@ CREATE TABLE MM_Movies (
     release_year number(6),
     directorName VARCHAR(50),
     average_rating FLOAT,
-    description VARCHAR(280),
-    FOREIGN KEY (director_id) REFERENCES MM_Directors(director_id)
+    description VARCHAR(280)
 );
 
 CREATE TABLE MM_Ratings (
@@ -92,38 +91,38 @@ SET average_rating = (
 
 
 -- Actors
-INSERT INTO MM_Actors (actor_name) VALUES ('Tom Hanks');
-INSERT INTO MM_Actors (actor_name) VALUES ('Meryl Streep');
-INSERT INTO MM_Actors (actor_name) VALUES ('Denzel Washington');
-INSERT INTO MM_Actors (actor_name) VALUES ('Viola Davis');
-INSERT INTO MM_Actors (actor_name) VALUES ('Leonardo DiCaprio');
-INSERT INTO MM_Actors (actor_name) VALUES ('Angelina Jolie');
-INSERT INTO MM_Actors (actor_name) VALUES ('Brad Pitt');
-INSERT INTO MM_Actors (actor_name) VALUES ('Scarlett Johansson');
-INSERT INTO MM_Actors (actor_name) VALUES ('Robert De Niro');
-INSERT INTO MM_Actors (actor_name) VALUES ('Emma Stone');
-INSERT INTO MM_Actors (actor_name) VALUES ('Chris Hemsworth');
-INSERT INTO MM_Actors (actor_name) VALUES ('Charlize Theron');
-INSERT INTO MM_Actors (actor_name) VALUES ('Samuel L. Jackson');
-INSERT INTO MM_Actors (actor_name) VALUES ('Kate Winslet');
-INSERT INTO MM_Actors (actor_name) VALUES ('Ryan Gosling');
+INSERT INTO MM_Actors (actor_id, actor_name) VALUES (actor_id_seq.NEXTVAL,'Tom Hanks');
+INSERT INTO MM_Actors (actor_id, actor_name) VALUES (actor_id_seq.NEXTVAL,'Meryl Streep');
+INSERT INTO MM_Actors (actor_id, actor_name) VALUES (actor_id_seq.NEXTVAL,'Denzel Washington');
+INSERT INTO MM_Actors (actor_id, actor_name) VALUES (actor_id_seq.NEXTVAL,'Viola Davis');
+INSERT INTO MM_Actors (actor_id, actor_name) VALUES (actor_id_seq.NEXTVAL,'Leonardo DiCaprio');
+INSERT INTO MM_Actors (actor_id, actor_name) VALUES (actor_id_seq.NEXTVAL,'Angelina Jolie');
+INSERT INTO MM_Actors (actor_id, actor_name) VALUES (actor_id_seq.NEXTVAL,'Brad Pitt');
+INSERT INTO MM_Actors (actor_id, actor_name) VALUES (actor_id_seq.NEXTVAL,'Scarlett Johansson');
+INSERT INTO MM_Actors (actor_id, actor_name) VALUES (actor_id_seq.NEXTVAL,'Robert De Niro');
+INSERT INTO MM_Actors (actor_id, actor_name) VALUES (actor_id_seq.NEXTVAL,'Emma Stone');
+INSERT INTO MM_Actors (actor_id, actor_name) VALUES (actor_id_seq.NEXTVAL,'Chris Hemsworth');
+INSERT INTO MM_Actors (actor_id, actor_name) VALUES (actor_id_seq.NEXTVAL,'Charlize Theron');
+INSERT INTO MM_Actors (actor_id, actor_name) VALUES (actor_id_seq.NEXTVAL,'Samuel L. Jackson');
+INSERT INTO MM_Actors (actor_id, actor_name) VALUES (actor_id_seq.NEXTVAL,'Kate Winslet');
+INSERT INTO MM_Actors (actor_id, actor_name) VALUES (actor_id_seq.NEXTVAL,'Ryan Gosling');
 
 -- Users
-INSERT INTO MM_Users (username, password, email) VALUES ('jdoe', 'password123', 'jdoe@example.com');
-INSERT INTO MM_Users (username, password, email) VALUES ('jsmith', 'password456', 'jsmith@example.com');
-INSERT INTO MM_Users (username, password, email) VALUES ('janedoe', 'password789', 'janedoe@example.com');
-INSERT INTO MM_Users (username, password, email) VALUES ('bobsmith', 'passwordabc', 'bobsmith@example.com');
-INSERT INTO MM_Users (username, password, email) VALUES ('katejones', 'passworddef', 'katejones@example.com');
-INSERT INTO MM_Users (username, password, email) VALUES ('johnsmith', 'p@ssw0rd', 'johnsmith@example.com');
-INSERT INTO MM_Users (username, password, email) VALUES ('lucycarter', 'qwerty123', 'lucycarter@example.com');
-INSERT INTO MM_Users (username, password, email) VALUES ('mikebrown', 'letmein123', 'mikebrown@example.com');
-INSERT INTO MM_Users (username, password, email) VALUES ('sarahwilson', 'hello123', 'sarahwilson@example.com');
-INSERT INTO MM_Users (username, password, email) VALUES ('jenniferlee', 'iloveyou123', 'jenniferlee@example.com');
-INSERT INTO MM_Users (username, password, email) VALUES ('davidsmith', 'welcome123', 'davidsmith@example.com');
-INSERT INTO MM_Users (username, password, email) VALUES ('amandajones', 'abc123', 'amandajones@example.com');
-INSERT INTO MM_Users (username, password, email) VALUES ('peterparker', 'spiderman123', 'peterparker@example.com');
-INSERT INTO MM_Users (username, password, email) VALUES ('lisawalker', 'password1234', 'lisawalker@example.com');
-INSERT INTO MM_Users (username, password, email) VALUES ('samuelbrown', 'qazwsxedc123', 'samuelbrown@example.com');
+INSERT INTO MM_Users (user_id, username, password, email) VALUES (user_id_seq.NEXTVAL,'jdoe', 'password123', 'jdoe@example.com');
+INSERT INTO MM_Users (user_id, username, password, email) VALUES (user_id_seq.NEXTVAL,'jsmith', 'password456', 'jsmith@example.com');
+INSERT INTO MM_Users (user_id, username, password, email) VALUES (user_id_seq.NEXTVAL,'janedoe', 'password789', 'janedoe@example.com');
+INSERT INTO MM_Users (user_id, username, password, email) VALUES (user_id_seq.NEXTVAL,'bobsmith', 'passwordabc', 'bobsmith@example.com');
+INSERT INTO MM_Users (user_id, username, password, email) VALUES (user_id_seq.NEXTVAL,'katejones', 'passworddef', 'katejones@example.com');
+INSERT INTO MM_Users (user_id, username, password, email) VALUES (user_id_seq.NEXTVAL,'johnsmith', 'p@ssw0rd', 'johnsmith@example.com');
+INSERT INTO MM_Users (user_id, username, password, email) VALUES (user_id_seq.NEXTVAL,'lucycarter', 'qwerty123', 'lucycarter@example.com');
+INSERT INTO MM_Users (user_id, username, password, email) VALUES (user_id_seq.NEXTVAL,'mikebrown', 'letmein123', 'mikebrown@example.com');
+INSERT INTO MM_Users (user_id, username, password, email) VALUES (user_id_seq.NEXTVAL,'sarahwilson', 'hello123', 'sarahwilson@example.com');
+INSERT INTO MM_Users (user_id, username, password, email) VALUES (user_id_seq.NEXTVAL,'jenniferlee', 'iloveyou123', 'jenniferlee@example.com');
+INSERT INTO MM_Users (user_id, username, password, email) VALUES (user_id_seq.NEXTVAL,'davidsmith', 'welcome123', 'davidsmith@example.com');
+INSERT INTO MM_Users (user_id, username, password, email) VALUES (user_id_seq.NEXTVAL,'amandajones', 'abc123', 'amandajones@example.com');
+INSERT INTO MM_Users (user_id, username, password, email) VALUES (user_id_seq.NEXTVAL,'peterparker', 'spiderman123', 'peterparker@example.com');
+INSERT INTO MM_Users (user_id, username, password, email) VALUES (user_id_seq.NEXTVAL,'lisawalker', 'password1234', 'lisawalker@example.com');
+INSERT INTO MM_Users (user_id, username, password, email) VALUES (user_id_seq.NEXTVAL,'samuelbrown', 'qazwsxedc123', 'samuelbrown@example.com');
 
 
 
@@ -136,7 +135,7 @@ INSERT INTO MM_Genres (genre_id, genre_name) VALUES (5, 'Comedy');
 
 
 -- Movies
-INSERT INTO MM_Movies (movie_id, movie_title, release_year,  directorName average_rating, description)
+INSERT INTO MM_Movies (movie_id, movie_title, release_year,  directorName, average_rating, description)
 VALUES (1, 'The Shawshank Redemption', 1994, 'Frank Darabont', 9.3, 'Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.');
 INSERT INTO MM_Movies (movie_id, movie_title, release_year,  directorName, average_rating, description)
 VALUES (2, 'The Godfather', 1972, 'Francis Ford Coppola', 9.2, 'The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.');
