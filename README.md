@@ -8,6 +8,7 @@
 
 ## To do list:
 ~~At least one sequence~~
+### Add movie-genre bridge table!!!
 ### 1. Minimum 2 indexes:
 - MM_Ratings, MM_Movies, MM_Actors, MM_MovieActors
 ### 2. Minimum 2 triggers:
