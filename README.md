@@ -28,4 +28,6 @@
 - 2. Get all movies from one genre function **(YUSUF)**
 ### 5. Packages:
 - Using at least 2x procedures, 2x functions
+- 1. "MM_MANAGER_PKG" package (adding new movies/users procedures)
+- 2. Querying to get list of movies from functions (actor/genre/year?)
 ### 6. Global, private variables / constructs
