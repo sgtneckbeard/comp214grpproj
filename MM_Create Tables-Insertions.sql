@@ -1,11 +1,12 @@
-DROP TABLE MM_MovieActors;
-DROP TABLE MM_Ratings;
-DROP TABLE MM_Movies;
-DROP TABLE MM_Directors;
-DROP TABLE MM_Genres;
-DROP TABLE MM_Actors;
-DROP TABLE MM_Users;
-DROP SEQUENCE user_id_seq;
+DROP TABLE MM_MovieActors CASCADE CONSTRAINTS;
+DROP TABLE MM_MovieGenre CASCADE CONSTRAINTS;
+DROP TABLE MM_Ratings CASCADE CONSTRAINTS;
+DROP TABLE MM_Movies CASCADE CONSTRAINTS;
+DROP TABLE MM_Directors CASCADE CONSTRAINTS;
+DROP TABLE MM_Genres CASCADE CONSTRAINTS;
+DROP TABLE MM_Actors CASCADE CONSTRAINTS;
+DROP TABLE MM_Users CASCADE CONSTRAINTS;
+DROP SEQUENCE user_id_seq ;
 DROP SEQUENCE actor_id_seq;
 
 
@@ -73,6 +74,13 @@ CREATE TABLE MM_MovieActors (
     FOREIGN KEY (actor_id) REFERENCES MM_Actors(actor_id)
 );
 
+CREATE TABLE MM_MovieGenre (
+    movie_id number(6),
+    genre_id number(6),
+    PRIMARY KEY (movie_id, genre_id),
+    FOREIGN KEY (movie_id) REFERENCES MM_Movies(movie_id),
+    FOREIGN KEY (genre_id) REFERENCES MM_Genres(genre_id)
+);
 
 UPDATE MM_Movies 
 SET average_rating = (
@@ -179,6 +187,27 @@ INSERT INTO MM_Movies (movie_id, movie_title, release_year, genre_id, director_i
 VALUES (14, 'Little Women', 2019, 1, 14, 7.9, 'Jo March reflects back and forth on her life, telling the beloved story of the March sisters - four young women each determined to live life on her own terms.');
 INSERT INTO MM_Movies (movie_id, movie_title, release_year, genre_id, director_id, average_rating, description)
 VALUES (15, 'Lost in Translation', 2003, 1, 15, 7.7, 'A faded movie star and a neglected young woman form an unlikely bond after crossing paths in Tokyo.');
+
+
+-- MovieActors
+INSERT INTO MM_MovieGenre (movie_id, genre_id) VALUES (1, 1);
+INSERT INTO MM_MovieGenre (movie_id, genre_id) VALUES (2, 1);
+INSERT INTO MM_MovieGenre (movie_id, genre_id) VALUES (3, 3);
+INSERT INTO MM_MovieGenre (movie_id, genre_id) VALUES (4, 4);
+INSERT INTO MM_MovieGenre (movie_id, genre_id) VALUES (5, 2);
+INSERT INTO MM_MovieGenre (movie_id, genre_id) VALUES (6, 1);
+INSERT INTO MM_MovieGenre (movie_id, genre_id) VALUES (7, 4);
+INSERT INTO MM_MovieGenre (movie_id, genre_id) VALUES (8, 1);
+INSERT INTO MM_MovieGenre (movie_id, genre_id) VALUES (9, 1);
+INSERT INTO MM_MovieGenre (movie_id, genre_id) VALUES (10, 1);
+INSERT INTO MM_MovieGenre (movie_id, genre_id) VALUES (11, 5);
+INSERT INTO MM_MovieGenre (movie_id, genre_id) VALUES (12, 1);
+INSERT INTO MM_MovieGenre (movie_id, genre_id) VALUES (13, 3);
+INSERT INTO MM_MovieGenre (movie_id, genre_id) VALUES (14, 1);
+INSERT INTO MM_MovieGenre (movie_id, genre_id) VALUES (15, 1);
+
+
+
 
 ---Ratings
 INSERT INTO MM_Ratings (rating_id, movie_id, user_id, rating_value) VALUES (1, 1, 1, 8.5);
