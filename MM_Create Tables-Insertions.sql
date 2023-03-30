@@ -187,7 +187,7 @@ INSERT INTO MM_Movies (movie_id, movie_title, release_year, director_id, average
 VALUES (15, 'Lost in Translation', 2003, 15, 7.7, 'A faded movie star and a neglected young woman form an unlikely bond after crossing paths in Tokyo.');
 
 
--- MovieActors
+-- MovieGenre
 INSERT INTO MM_MovieGenre (movie_id, genre_id) VALUES (1, 1);
 INSERT INTO MM_MovieGenre (movie_id, genre_id) VALUES (2, 1);
 INSERT INTO MM_MovieGenre (movie_id, genre_id) VALUES (3, 3);
