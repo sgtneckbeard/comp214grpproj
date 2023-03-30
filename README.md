@@ -18,6 +18,8 @@
 - 2. Get top rated movies Procedure
 ### 4. Minimum 2 functions:
 - include exceptions
+- 1. Get all movies from one actor Function
+- 2. 
 ### 5. Packages:
 - Using at least 2x procedures, 2x functions
 ### 6. Global, private variables / constructs
