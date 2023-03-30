@@ -14,6 +14,7 @@
 - Data entry, updating, Trigger to update ratings, error logging
 ### 3. Minimum 2 procedures
 - include exceptions, cursors
+- 1. Get top rated movies
 ### 4. Minimum 2 functions:
 - include exceptions
 ### 5. Packages:
