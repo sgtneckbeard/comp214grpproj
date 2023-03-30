@@ -6,8 +6,8 @@
 
 ## To do list:
 ~~At least one sequence~~
-### Add movie-genre bridge table!!!
-### Add description field to MM_MOVIES!!!
+### (Yusef) Add movie-genre bridge table
+### (Yusef) Add description field to MM_MOVIES
 ### 1. Minimum 2 indexes:
 - 1. MM_Ratings 
 - 2. MM_Movies
