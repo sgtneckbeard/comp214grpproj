@@ -47,11 +47,9 @@ CREATE TABLE MM_Movies (
     movie_id number(6) PRIMARY KEY,
     movie_title VARCHAR(255),
     release_year number(6),
-    genre_id number(6),
     director_id number(6),
     average_rating FLOAT,
     description VARCHAR(280),
-    FOREIGN KEY (genre_id) REFERENCES MM_Genres(genre_id),
     FOREIGN KEY (director_id) REFERENCES MM_Directors(director_id)
 );
 
