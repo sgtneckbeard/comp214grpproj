@@ -18,9 +18,9 @@
 - 2. Update average rating **(NATHAN)**
 ### 3. Minimum 2 procedures
 - include exceptions, cursors
-- 1. Add new movie procedures
+- 1. Add new movie procedures **(Hyeri)**
 - 2. Get top rated movies procedure
-- 3. Add new user procedure
+- 3. Add new user procedure **(Hyeri)**
 - 4. Update movie description
 ### 4. Minimum 2 functions:
 - include exceptions
