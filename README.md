@@ -17,11 +17,11 @@
 - 1. Add log error table **(PEDRO)** 
 - 2. Update average rating **(NATHAN)**
 ### 3. Minimum 2 procedures
-- include exceptions, cursors
-- 1. Add new movie procedures **(Hyeri)**
+- include exceptions, cursors **(PEDRO)**
+- 1. Add new movie procedures **(HYERI)**
 - 2. Get top rated movies procedure
-- 3. Add new user procedure **(Hyeri)**
-- 4. Update movie description
+- 3. Add new user procedure **(HYERI)**
+- 4. Update movie description **(HYERI)**
 ### 4. Minimum 2 functions:
 - include exceptions
 - 1. Get all movies from one actor function **(YUSUF)**
