@@ -20,8 +20,7 @@
 - include exceptions, cursors **(PEDRO)**
 - 1. Add new movie procedures **(HYERI)**
 - 2. Get top rated movies procedure **(HYERI)**
-- 3. Add new user procedure **(HYERI)**
-- 4. Update movie description **(HYERI)**
+- 3. Update movie description **(HYERI)**
 ### 4. Minimum 2 functions:
 - include exceptions
 - 1. Get all movies from one actor function **(YUSUF)**
