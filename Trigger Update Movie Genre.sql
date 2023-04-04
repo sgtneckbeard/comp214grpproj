@@ -1,7 +1,7 @@
-CREATE TRIGGER update_mm_moviegenre AFTER UPDATE ON mm_movie
+CREATE OR REPLACE TRIGGER TR_MM_MOVIES_INSERT
+AFTER INSERT ON MM_MOVIES
 FOR EACH ROW
 BEGIN
-    UPDATE mm_moviegenre
-    SET genre = NEW.genre
-    WHERE movie_id = NEW.movie_id;
+  INSERT INTO MM_MOVIEGENRE (movie_id, genre_id)
+  VALUES (:NEW.movie_id, :NEW.genre_id);
 END;

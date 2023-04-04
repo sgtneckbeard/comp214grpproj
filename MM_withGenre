@@ -165,28 +165,25 @@ DROP SEQUENCE actor_id_seq;
     VALUES (14, 1, 'Little Women', 2019, 'Greta Gerwig', 7.9, 'Jo March reflects back and forth on her life, telling the beloved story of the March sisters - four young women each determined to live life on her own terms.');
     INSERT INTO MM_Movies (movie_id, genre_id, movie_title, release_year, directorName, average_rating, description)
     VALUES (15, 1, 'Lost in Translation', 2003, 'Sofia Coppola', 7.7, 'A faded movie star and a neglected young woman form an unlikely bond after crossing paths in Tokyo.');
-    
-    -- New Insert
     INSERT INTO MM_Movies (movie_id, genre_id, movie_title, release_year, directorName, average_rating, description)
     VALUES (16, 3, 'Children of Men', 2006, 'Alfonso Cuarón', 7.9, 'In a chaotic world in which humans can no longer procreate, a former activist agrees to help transport a miraculously pregnant woman to a sanctuary at sea, where her child''s birth may help scientists save the future of humankind.');
-    -- End new insert
 
-    -- MovieGenre
-    INSERT INTO MM_MovieGenre (movie_id, genre_id) VALUES (1, 1);
-    INSERT INTO MM_MovieGenre (movie_id, genre_id) VALUES (2, 1);
-    INSERT INTO MM_MovieGenre (movie_id, genre_id) VALUES (3, 3);
-    INSERT INTO MM_MovieGenre (movie_id, genre_id) VALUES (4, 4);
-    INSERT INTO MM_MovieGenre (movie_id, genre_id) VALUES (5, 2);
-    INSERT INTO MM_MovieGenre (movie_id, genre_id) VALUES (6, 1);
-    INSERT INTO MM_MovieGenre (movie_id, genre_id) VALUES (7, 4);
-    INSERT INTO MM_MovieGenre (movie_id, genre_id) VALUES (8, 1);
-    INSERT INTO MM_MovieGenre (movie_id, genre_id) VALUES (9, 1);
-    INSERT INTO MM_MovieGenre (movie_id, genre_id) VALUES (10, 1);
-    INSERT INTO MM_MovieGenre (movie_id, genre_id) VALUES (11, 5);
-    INSERT INTO MM_MovieGenre (movie_id, genre_id) VALUES (12, 1);
-    INSERT INTO MM_MovieGenre (movie_id, genre_id) VALUES (13, 3);
-    INSERT INTO MM_MovieGenre (movie_id, genre_id) VALUES (14, 1);
-    INSERT INTO MM_MovieGenre (movie_id, genre_id) VALUES (15, 1);
+    -- MovieGenre (NO NEED cause trigger does it automatically)
+    -- INSERT INTO MM_MovieGenre (movie_id, genre_id) VALUES (1, 1);
+    -- INSERT INTO MM_MovieGenre (movie_id, genre_id) VALUES (2, 1);
+    -- INSERT INTO MM_MovieGenre (movie_id, genre_id) VALUES (3, 3);
+    -- INSERT INTO MM_MovieGenre (movie_id, genre_id) VALUES (4, 4);
+    -- INSERT INTO MM_MovieGenre (movie_id, genre_id) VALUES (5, 2);
+    -- INSERT INTO MM_MovieGenre (movie_id, genre_id) VALUES (6, 1);
+    -- INSERT INTO MM_MovieGenre (movie_id, genre_id) VALUES (7, 4);
+    -- INSERT INTO MM_MovieGenre (movie_id, genre_id) VALUES (8, 1);
+    -- INSERT INTO MM_MovieGenre (movie_id, genre_id) VALUES (9, 1);
+    -- INSERT INTO MM_MovieGenre (movie_id, genre_id) VALUES (10, 1);
+    -- INSERT INTO MM_MovieGenre (movie_id, genre_id) VALUES (11, 5);
+    -- INSERT INTO MM_MovieGenre (movie_id, genre_id) VALUES (12, 1);
+    -- INSERT INTO MM_MovieGenre (movie_id, genre_id) VALUES (13, 3);
+    -- INSERT INTO MM_MovieGenre (movie_id, genre_id) VALUES (14, 1);
+    -- INSERT INTO MM_MovieGenre (movie_id, genre_id) VALUES (15, 1);
 
 
 
