@@ -79,12 +79,12 @@ DROP TRIGGER TR_MM_MOVIES_INSERT;
         FOREIGN KEY (genre_id) REFERENCES MM_Genres(genre_id)
     );
 
-    UPDATE MM_Movies 
-    SET average_rating = (
-        SELECT AVG(rating_value) 
-        FROM MM_Ratings 
-        WHERE MM_Ratings.movie_id = MM_Movies.movie_id
-    );
+    -- UPDATE MM_Movies 
+    -- SET average_rating = (
+    --     SELECT AVG(rating_value) 
+    --     FROM MM_Ratings 
+    --     WHERE MM_Ratings.movie_id = MM_Movies.movie_id
+    -- );
 
 
 
