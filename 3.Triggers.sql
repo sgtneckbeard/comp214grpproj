@@ -10,11 +10,13 @@ END;
 
 
 -- Trigger to update average_rating column in mm_movies table when mm_ratings table is updated
-CREATE OR REPLACE TRIGGER TR_MM_RATINGS_UPDATE
-AFTER UPDATE ON MM_RATINGS
+CREATE OR REPLACE TRIGGER TR_update_avg_rating
+AFTER INSERT ON mm_ratings
 FOR EACH ROW
 BEGIN
-  UPDATE MM_MOVIES
-  SET average_rating = (SELECT AVG(rating) FROM MM_RATINGS WHERE movie_id = :NEW.movie_id)
-  WHERE movie_id = :NEW.movie_id;
+  UPDATE mm_movies
+  SET average_rating = (SELECT AVG(rating_value) FROM mm_ratings WHERE movie_id = :new.movie_id)
+  WHERE movie_id = :new.movie_id;
 END;
+
+
