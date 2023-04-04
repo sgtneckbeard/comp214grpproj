@@ -120,32 +120,36 @@ END;
 
 CREATE OR REPLACE PROCEDURE get_top_rated_movie
 IS
-
-   v_movie_id    mm_ratings.movie_id%TYPE;
-   v_rating      mm_ratings.rating_value%TYPE;
-   CURSOR cur_rating IS
-      SELECT movie_id, rating_value FROM mm_ratings
-      ORDER BY rating_value
-      DESC FETCH FIRST 1 ROW ONLY;
+    v_movie_id    mm_ratings.movie_id%TYPE;
+    v_rating      mm_ratings.rating_value%TYPE;
+    CURSOR cur_rating IS
+    SELECT movie_id, rating_value FROM mm_ratings
+    ORDER BY rating_value
+    DESC FETCH FIRST 5 ROW ONLY;
    
-   no_rating_found EXCEPTION;
+    no_rating_found EXCEPTION;
    
 BEGIN
-   -- Retrieve the movie with the highest rating
-   OPEN cur_rating;
-   FETCH cur_rating INTO v_movie_id, v_rating;
-   IF cur_rating%NOTFOUND THEN
-      RAISE no_rating_found;
-   END IF;
-   CLOSE cur_rating;
-   
-   -- Display the movie information
-   DBMS_OUTPUT.PUT_LINE('Top Rated Movie id: ' || v_movie_id || ', Rating: ' || v_rating);
-   
-   -- Exception handling
-   EXCEPTION
-      WHEN no_rating_found THEN
-         DBMS_OUTPUT.PUT_LINE('Error: No rating found');
-      WHEN OTHERS THEN
-         DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);
+    OPEN cur_rating;
+        DBMS_OUTPUT.PUT_LINE('Top 5 Movies');
+    LOOP
+        FETCH cur_rating INTO v_movie_id, v_rating;
+        EXIT WHEN cur_rating%NOTFOUND;
+        
+        -- Display the movie information
+        DBMS_OUTPUT.PUT_LINE('Movies: ' || v_movie_id || ', Rating: ' || v_rating);
+    END LOOP;
+
+    CLOSE cur_rating;
+    
+-- Exception handling
+EXCEPTION
+    WHEN no_rating_found THEN
+        DBMS_OUTPUT.PUT_LINE('Error: No rating found');
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);
+END;
+
+BEGIN
+    get_top_rated_movie();
 END;

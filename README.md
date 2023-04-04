@@ -17,7 +17,7 @@
 - 1. Add log error table **(PEDRO)** 
 - 2. Update average rating **(NATHAN)**
 ### 3. Minimum 2 procedures
-- include exceptions, cursors **(PEDRO)**
+- include exceptions, cursors
 - 1. Add new movie procedures **(HYERI)**
 - 2. Get top rated movies procedure **(HYERI)**
 - 3. Add new user procedure **(HYERI)**
