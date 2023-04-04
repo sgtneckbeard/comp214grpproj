@@ -19,7 +19,7 @@
 ### 3. Minimum 2 procedures
 - include exceptions, cursors **(PEDRO)**
 - 1. Add new movie procedures **(HYERI)**
-- 2. Get top rated movies procedure
+- 2. Get top rated movies procedure **(HYERI)**
 - 3. Add new user procedure **(HYERI)**
 - 4. Update movie description **(HYERI)**
 ### 4. Minimum 2 functions:

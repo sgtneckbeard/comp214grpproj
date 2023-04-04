@@ -5,7 +5,7 @@ It doesn't work now
 Create new table
 
 name: MM_CINEMA
-Cols: cinema_name,..., location(uptown, midtown, downtown)
+Cols: cinema_name, location(uptown, midtown, downtown)
 
 insert new col (preferred_location) into mm_users
 
@@ -24,7 +24,6 @@ CREATE OR REPLACE PROCEDURE add_user(
        SELECT user_id FROM mm_users
        WHERE preferred_location = 'uptown';
    
-   -- Declare variables for exception handling
     invalid_location EXCEPTION;
     
 BEGIN
@@ -61,7 +60,7 @@ END;
 /*
 -------------
 insert 'genre' coloum into 'mm_movies'
-??? mm_moviegenre table
+??? mm_moviegenre
 -------------
 */
 CREATE OR REPLACE PROCEDURE add_movie(
@@ -116,4 +115,37 @@ BEGIN
             DBMS_OUTPUT.PUT_LINE('Error: Invalid Genre');
         WHEN OTHERS THEN
             DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);
+END;
+
+
+CREATE OR REPLACE PROCEDURE get_top_rated_movie
+IS
+
+   v_movie_id    mm_ratings.movie_id%TYPE;
+   v_rating      mm_ratings.rating_value%TYPE;
+   CURSOR cur_rating IS
+      SELECT movie_id, rating_value FROM mm_ratings
+      ORDER BY rating_value
+      DESC FETCH FIRST 1 ROW ONLY;
+   
+   no_rating_found EXCEPTION;
+   
+BEGIN
+   -- Retrieve the movie with the highest rating
+   OPEN cur_rating;
+   FETCH cur_rating INTO v_movie_id, v_rating;
+   IF cur_rating%NOTFOUND THEN
+      RAISE no_rating_found;
+   END IF;
+   CLOSE cur_rating;
+   
+   -- Display the movie information
+   DBMS_OUTPUT.PUT_LINE('Top Rated Movie id: ' || v_movie_id || ', Rating: ' || v_rating);
+   
+   -- Exception handling
+   EXCEPTION
+      WHEN no_rating_found THEN
+         DBMS_OUTPUT.PUT_LINE('Error: No rating found');
+      WHEN OTHERS THEN
+         DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);
 END;
