@@ -9,7 +9,7 @@ Cols: cinema_name, location(uptown, midtown, downtown)
 
 insert new col (preferred_location) into mm_users
 
-*/
+
 
 CREATE OR REPLACE PROCEDURE add_user(
     p_user_id     IN mm_users.user_id%TYPE,
@@ -56,34 +56,34 @@ BEGIN
         WHEN OTHERS THEN
             DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);
 END;
+*/
 
 /*
 -------------
-insert 'genre' coloum into 'mm_movies'
-??? mm_moviegenre
+doesn't work with parameters.
 -------------
 */
 CREATE OR REPLACE PROCEDURE add_movie(
     p_mv_id         IN mm_movies.movie_id%TYPE,
     p_mv_title      IN mm_movies.movie_title%TYPE,
-    --p_genre         IN mm_movies.genre&TYPE,
+    p_genre_id      IN mm_movies.genre_id%TYPE,
     p_release_yr    IN mm_movies.release_year%TYPE,
     p_dr_name       IN mm_movies.directorname%TYPE,
     p_avg_rating    IN mm_movies.average_rating%TYPE,
     p_description   IN mm_movies.description%TYPE
     
 )IS
-
-    v_genre_name   mm_genres.genre_name%TYPE;
+    v_genre_id   mm_genres.genre_id%TYPE;
+    
     CURSOR cur_genre IS
-       SELECT genre_name FROM mm_genres
-       WHERE genre_name = p_genre;
+    SELECT genre_id FROM mm_genres
+    WHERE genre_id = p_genre_id;
    
     invalid_genre EXCEPTION;
     
 BEGIN
     OPEN cur_genre;
-    FETCH cur_genre INTO v_genre_name;
+    FETCH cur_genre INTO v_genre_id;
     IF cur_genre%NOTFOUND THEN
        RAISE invalid_genre;
     END IF;
@@ -91,22 +91,11 @@ BEGIN
    
     -- Insert the new movie record
     INSERT INTO mm_movies (
-      movie_id,
-      movie_title,
-      --genre,
-      release_year,
-      directorname,
-      average_rating,
-      description
+      movie_id, movie_title, genre_id, release_year,
+      directorname, average_rating, description
     ) VALUES (
-      p_mv_id,
-      p_mv_title,
-      --p_genre
-      p_release_yr,
-      p_dr_name,
-      p_avg_rating,
-      p_description
-      
+      p_mv_id, p_mv_title, p_genre_id, p_release_yr,
+      p_dr_name, p_avg_rating, p_description   
     );
    
     -- Exception handling
@@ -117,14 +106,22 @@ BEGIN
             DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);
 END;
 
+BEGIN
+    add_movie(17, 3, 'Iron Man', 2008, 'Jon Favreau', null,
+              'A billionaire industrialist and genius inventor who creates a suit of armor to become a superhero known as Iron Man.');
+END;
+
 
 CREATE OR REPLACE PROCEDURE get_top_rated_movie
 IS
-    v_movie_id    mm_ratings.movie_id%TYPE;
-    v_rating      mm_ratings.rating_value%TYPE;
+    v_movie_id    mm_movies.movie_id%TYPE;
+    v_movie_title mm_movies.movie_title%TYPE;
+    v_avg_rating  mm_movies.average_rating%TYPE;
+    
     CURSOR cur_rating IS
-    SELECT movie_id, rating_value FROM mm_ratings
-    ORDER BY rating_value
+    SELECT RPAD(movie_id,4), RPAD(movie_title,50), average_rating
+    FROM mm_movies
+    ORDER BY average_rating
     DESC FETCH FIRST 5 ROW ONLY;
    
     no_rating_found EXCEPTION;
@@ -133,11 +130,11 @@ BEGIN
     OPEN cur_rating;
         DBMS_OUTPUT.PUT_LINE('Top 5 Movies');
     LOOP
-        FETCH cur_rating INTO v_movie_id, v_rating;
+        FETCH cur_rating INTO v_movie_id, v_movie_title, v_avg_rating;
         EXIT WHEN cur_rating%NOTFOUND;
         
         -- Display the movie information
-        DBMS_OUTPUT.PUT_LINE('Movies: ' || v_movie_id || ', Rating: ' || v_rating);
+        DBMS_OUTPUT.PUT_LINE('Movie ID: ' || v_movie_id || '  Movie Title: ' || v_movie_title ||'  Average Rating: ' || v_avg_rating);
     END LOOP;
 
     CLOSE cur_rating;
