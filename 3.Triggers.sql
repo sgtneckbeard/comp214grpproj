@@ -45,5 +45,35 @@ COMPOUND TRIGGER
         g_rating_sum := 0;
     END AFTER STATEMENT;
 END TR_update_avg_rating;
-/
+
+
+
+-- Trigger to log errors in table
+CREATE OR REPLACE TRIGGER log_mm_movieactors_error_trigger
+AFTER INSERT OR UPDATE OR DELETE ON MM_MovieActors
+FOR EACH ROW
+DECLARE
+  v_operation VARCHAR2(10);
+  v_error_msg VARCHAR2(4000);
+  v_error_id NUMBER;
+BEGIN
+  IF INSERTING THEN
+    v_operation := 'INSERT';
+  ELSIF UPDATING THEN
+    v_operation := 'UPDATE';
+  ELSIF DELETING THEN
+    v_operation := 'DELETE';
+  END IF;
+  
+  -- Get the next error id from the sequence
+  v_error_id := error_id_seq.NEXTVAL;
+  
+  -- Log the error to the error_log table
+  v_error_msg := SUBSTR(DBMS_UTILITY.FORMAT_ERROR_BACKTRACE(), 1, 4000);
+  INSERT INTO error_log (error_id, table_name, operation, error_msg, error_time)
+  VALUES (v_error_id, 'MM_MovieActors', v_operation, v_error_msg, SYSTIMESTAMP);
+  
+  -- Raise the error to prevent the transaction from committing
+  RAISE_APPLICATION_ERROR(-20001, v_error_msg);
+END;
 
