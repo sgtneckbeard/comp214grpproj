@@ -11,12 +11,39 @@ END;
 
 -- Trigger to update average_rating column in mm_movies table when mm_ratings table is updated
 CREATE OR REPLACE TRIGGER TR_update_avg_rating
-AFTER INSERT ON mm_ratings
-FOR EACH ROW
-BEGIN
-  UPDATE mm_movies
-  SET average_rating = (SELECT AVG(rating_value) FROM mm_ratings WHERE movie_id = :new.movie_id)
-  WHERE movie_id = :new.movie_id;
-END;
+FOR INSERT OR UPDATE OR DELETE ON MM_Ratings
+COMPOUND TRIGGER
+    g_movie_id MM_Ratings.movie_id%TYPE;
+    g_rating_count NUMBER := 0;
+    g_rating_sum NUMBER := 0;
 
+    AFTER EACH ROW IS
+    BEGIN
+        IF INSERTING THEN
+            g_rating_count := g_rating_count + 1;
+            g_rating_sum := g_rating_sum + :NEW.rating_value;
+            g_movie_id := :NEW.movie_id;
+        ELSIF UPDATING THEN
+            g_rating_sum := g_rating_sum - :OLD.rating_value + :NEW.rating_value;
+            g_movie_id := :NEW.movie_id;
+        ELSIF DELETING THEN
+            g_rating_count := g_rating_count - 1;
+            g_rating_sum := g_rating_sum - :OLD.rating_value;
+            g_movie_id := :OLD.movie_id;
+        END IF;
+    END AFTER EACH ROW;
+
+    AFTER STATEMENT IS
+    BEGIN
+        IF g_rating_count > 0 THEN
+            UPDATE MM_Movies
+            SET average_rating = g_rating_sum / g_rating_count
+            WHERE movie_id = g_movie_id;
+        END IF;
+        g_movie_id := NULL;
+        g_rating_count := 0;
+        g_rating_sum := 0;
+    END AFTER STATEMENT;
+END TR_update_avg_rating;
+/
 
