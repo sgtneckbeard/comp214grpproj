@@ -11,3 +11,7 @@ DROP SEQUENCE actor_id_seq;
 DROP TRIGGER TR_MM_MOVIES_INSERT;
 DROP TRIGGER TR_MM_Movies;
 DROP TRIGGER TR_update_avg_rating;
+DROP PROCEDURE add_movie;
+DROP PROCEDURE get_top_rated_movie;
+DROP FUNCTION get_movies_by_actor;
+DROP FUNCTION get_movies_by_genre;
