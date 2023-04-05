@@ -11,10 +11,12 @@
         NOCACHE
         NOCYCLE;
 
-    CREATE SEQUENCE error_id_seq 
-        START WITH 1 
-        INCREMENT BY 1;
-
+    CREATE SEQUENCE error_log_seq
+        START WITH 1
+        INCREMENT BY 1
+        MAXVALUE 999999
+        NOCYCLE
+        NOCACHE;
 -- Sequences End -- 
 
 -------------------
@@ -83,13 +85,10 @@
     -- );
 
     CREATE TABLE error_log (
-        error_id NUMBER PRIMARY KEY,
-        table_name VARCHAR2(50),
-        sequence_name VARCHAR2(50),
-        operation VARCHAR2(10),
-        error_msg CLOB,
-        error_time TIMESTAMP
-);
+        error_id number(6) PRIMARY KEY,
+        error_message VARCHAR(255),
+        error_timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    );
 -- Tables End --
 
 -------------------
