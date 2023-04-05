@@ -112,9 +112,7 @@ END;
 
 
 -----------------------------------------------
-
-
-
+/*
 CREATE OR REPLACE PACKAGE BODY user_auth_pkg AS
     -- Function to check if a given username and password match a user in the MM_Users table
     FUNCTION authenticate_user(p_username IN VARCHAR2, p_password IN VARCHAR2) RETURN BOOLEAN AS
@@ -159,7 +157,7 @@ BEGIN
 END;
 /
 
-
+*/
 
 
 
