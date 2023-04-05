@@ -15,7 +15,7 @@
 ### 2. Minimum 2 triggers:
 - Data entry, updating, Trigger to update ratings, error logging
 - 1. Add log error table **(PEDRO)** 
-- 2. Update average rating **(NATHAN)**
+- 2. Update average rating **(NATHAN)** **(PEDRO)**
 ### 3. Minimum 2 procedures
 - include exceptions, cursors
 - 1. Add new movie procedures **(HYERI)**
