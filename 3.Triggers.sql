@@ -49,7 +49,7 @@ END TR_update_avg_rating;
 
 
 -- Trigger to log errors in table
-CREATE OR REPLACE TRIGGER MM_Movies_TRG
+CREATE OR REPLACE TRIGGER TR_MM_Movies
 BEFORE INSERT OR UPDATE OR DELETE ON MM_Movies
 FOR EACH ROW
 DECLARE
