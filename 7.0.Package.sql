@@ -86,7 +86,7 @@ EXCEPTION
         DBMS_OUTPUT.PUT_LINE('Failed to reset password: ' || SQLERRM);
 END;
 
-------------------Test Case for authenticate_user:
+------------------Test Case for Login:
 DECLARE
     v_result BOOLEAN;
 BEGIN
