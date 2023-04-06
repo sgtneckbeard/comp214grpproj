@@ -173,7 +173,7 @@ END;
 -----------------------------------------------------------------
 -----------------------------------------------------------------
 -----------------------------------------------------------------
-CREATE OR REPLACE PROCEDURE get_top_rated_movie
+CREATE OR REPLACE PROCEDURE get_top_5
 IS
     v_movie_id    mm_movies.movie_id%TYPE;
     v_movie_title mm_movies.movie_title%TYPE;
