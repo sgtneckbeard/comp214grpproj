@@ -56,12 +56,12 @@ END;
 -- 2. Procedure for getting top 5 movies by average rating from the mm_movies table with exception handling
 ------------------------------------------------------------------------------------------------------------
 
-CREATE OR REPLACE PROCEDURE get_top_5
+create or replace PROCEDURE get_top_5
 IS
     v_movie_id    mm_movies.movie_id%TYPE;
     v_movie_title mm_movies.movie_title%TYPE;
     v_avg_rating  mm_movies.average_rating%TYPE;
-    
+
     CURSOR cur_rating IS
     SELECT movie_id, movie_title, average_rating
     FROM (
@@ -70,9 +70,9 @@ IS
         WHERE average_rating IS NOT NULL
         ORDER BY average_rating DESC
     ) WHERE ROWNUM <= 5;
-   
+
     no_rating_found EXCEPTION;
-   
+
 BEGIN
     OPEN cur_rating;
         DBMS_OUTPUT.PUT_LINE('Top 5 Movies');
@@ -81,13 +81,12 @@ BEGIN
         EXIT WHEN cur_rating%NOTFOUND;
 
         -- Display the movie information
-        DBMS_OUTPUT.PUT_LINE('Movie ID: ' || LPAD(v_movie_id,3)
-                            ||'  Movie Title: ' || RPAD(v_movie_title,20)
+        DBMS_OUTPUT.PUT_LINE('Title: ' || RPAD(v_movie_title,25)
                             ||'  Average Rating: ' || v_avg_rating);
     END LOOP;
 
     CLOSE cur_rating;
-    
+
 -- Exception handling
 EXCEPTION
     WHEN no_rating_found THEN
