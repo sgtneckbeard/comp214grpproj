@@ -59,7 +59,7 @@ BEGIN
    WHERE genre_name = p_genre_name;
 
    IF v_count = 0 THEN
-      RAISE_APPLICATION_ERROR(-20001, 'Genre not found: ' || p_genre_name);
+      RAISE_APPLICATION_ERROR(-20001, 'Sorry, the following genre was not found: ' || p_genre_name);
    ELSE
       OPEN v_cursor FOR
          SELECT m.movie_title
