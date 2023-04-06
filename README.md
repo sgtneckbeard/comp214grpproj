@@ -27,5 +27,5 @@
 - 2. Get all movies from one genre function **(YUSUF)**
 ### 5. Packages:
 - Using at least 2x procedures, 2x functions
-- 1. "MM_MANAGER_PKG" package (adding new movies)
+- 1. "MM_MANAGER_PKG" package (adding new movies) **(PEDRO)** 
 ### 6. Global, private variables / constructs
