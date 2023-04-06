@@ -81,7 +81,7 @@ BEGIN
         EXIT WHEN cur_rating%NOTFOUND;
 
         -- Display the movie information
-        DBMS_OUTPUT.PUT_LINE('Movie Title: ' || RPAD(v_movie_title,20)
+        DBMS_OUTPUT.PUT_LINE('Title: ' || RPAD(v_movie_title,25)
                             ||'  Average Rating: ' || v_avg_rating);
     END LOOP;
 
