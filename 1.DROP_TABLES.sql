@@ -13,5 +13,6 @@ DROP TRIGGER TR_update_avg_rating;
 DROP TRIGGER TR_MM_Movies;
 DROP PROCEDURE add_movie;
 DROP PROCEDURE get_top_rated_movie;
+DROP PROCEDURE get_top_5;
 DROP FUNCTION get_movies_by_actor;
 DROP FUNCTION get_movies_by_genre;
