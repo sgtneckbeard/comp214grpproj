@@ -86,11 +86,11 @@ EXCEPTION
         DBMS_OUTPUT.PUT_LINE('Failed to reset password: ' || SQLERRM);
 END;
 
-------------------Test Case for Login:
+------------------Test Case for authenticate_user:
 DECLARE
     v_result BOOLEAN;
 BEGIN
-    v_result := user_auth_pkg.authenticate_user('user1', 'password1');
+    v_result := user_auth_pkg.authenticate_user('jdoe', 'password123');
     IF v_result THEN
         DBMS_OUTPUT.PUT_LINE('Authentication Successful');
     ELSE
@@ -98,7 +98,7 @@ BEGIN
     END IF;
 END;
 
-------------------Test Case for authenticate_user:
+------------------Test Case for Login:
 DECLARE
     v_result BOOLEAN;
 BEGIN

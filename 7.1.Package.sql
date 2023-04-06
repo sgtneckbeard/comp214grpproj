@@ -138,3 +138,56 @@ BEGIN
   -- Delete the movie
   MM_MANAGER_PKG.DeleteMovie(p_movie_id => l_movie_id);
 END;
+
+-------------------TEST CASES SEPATE------------
+------------Add movie----
+DECLARE
+  l_genre_id MM_Genres.genre_id%TYPE := 1;
+  l_movie_title MM_Movies.movie_title%TYPE := 'The Matrix';
+  l_release_year MM_Movies.release_year%TYPE := 1999;
+  l_directorName MM_Movies.directorName%TYPE := 'Lana Wachowski';
+  l_description MM_Movies.description%TYPE := 'A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.';
+  l_movie_id MM_Movies.movie_id%TYPE := 18;
+BEGIN
+  MM_MANAGER_PKG.AddMovie(
+    p_genre_id => l_genre_id,
+    p_movie_title => l_movie_title,
+    p_release_year => l_release_year,
+    p_directorName => l_directorName,
+    p_description => l_description,
+    p_movie_id => l_movie_id
+  );
+END;
+
+------------Update movie-----
+DECLARE
+  l_genre_id MM_Genres.genre_id%TYPE := 1;
+  l_movie_title MM_Movies.movie_title%TYPE := 'The Matrix';
+  l_release_year MM_Movies.release_year%TYPE := 1999;
+  l_directorName MM_Movies.directorName%TYPE := 'Lana Wachowski';
+  l_description MM_Movies.description%TYPE := 'A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.';
+  l_movie_id MM_Movies.movie_id%TYPE := 18;
+BEGIN
+  SELECT movie_id INTO l_movie_id FROM MM_Movies WHERE movie_title = l_movie_title AND directorName = l_directorName;
+  MM_MANAGER_PKG.UpdateMovie(
+    p_movie_id => l_movie_id,
+    p_genre_id => l_genre_id,
+    p_movie_title => 'The Matrix Reloaded',
+    p_release_year => 2003,
+    p_directorName => l_directorName,
+    p_description => l_description || ' Neo, Trinity, and Morpheus continue to lead the revolt against the Machine Army.'
+  );
+END;
+
+------------Remove movie-----
+DECLARE
+  l_genre_id MM_Genres.genre_id%TYPE := 1;
+  l_movie_title MM_Movies.movie_title%TYPE := 'The Matrix Reloaded';
+  l_release_year MM_Movies.release_year%TYPE := 2003;
+  l_directorName MM_Movies.directorName%TYPE := 'Lana Wachowski';
+  l_description MM_Movies.description%TYPE := ' Neo, Trinity, and Morpheus continue to lead the revolt against the Machine Army.';
+  l_movie_id MM_Movies.movie_id%TYPE := 18;
+BEGIN
+  SELECT movie_id INTO l_movie_id FROM MM_Movies WHERE movie_title = l_movie_title AND directorName = l_directorName;
+  MM_MANAGER_PKG.DeleteMovie(p_movie_id => l_movie_id);
+END;

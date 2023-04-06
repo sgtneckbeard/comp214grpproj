@@ -77,12 +77,6 @@
         FOREIGN KEY (genre_id) REFERENCES MM_Genres(genre_id)
     );
 
-    -- UPDATE MM_Movies 
-    -- SET average_rating = (
-    --     SELECT AVG(rating_value) 
-    --     FROM MM_Ratings 
-    --     WHERE MM_Ratings.movie_id = MM_Movies.movie_id
-    -- );
 
     CREATE TABLE error_log (
         error_id number(6) PRIMARY KEY,
