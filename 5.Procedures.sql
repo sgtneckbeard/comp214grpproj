@@ -125,8 +125,8 @@ IS
     CURSOR cur_rating IS
     SELECT RPAD(movie_id,4), RPAD(movie_title,50), average_rating
     FROM mm_movies
-    ORDER BY average_rating
-    DESC FETCH FIRST 5 ROW ONLY;
+    ORDER BY average_rating DESC 
+    FETCH FIRST 5 ROW ONLY;
    
     no_rating_found EXCEPTION;
    
