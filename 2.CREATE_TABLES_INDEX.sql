@@ -88,5 +88,17 @@
 -------------------
 
 -- Indexes Start -- 
+-- MM_Ratings -- 
+CREATE INDEX idx_rating_movie_id ON MM_Ratings(movie_id);
+CREATE INDEX idx_rating_user_id ON MM_Ratings(user_id);
 
+-- MM_Movies table --
+CREATE INDEX idx_movie_genre_id ON MM_Movies(genre_id);
+CREATE INDEX idx_movie_title ON MM_Movies(movie_title);
+CREATE INDEX idx_movie_release_year ON MM_Movies(release_year);
+CREATE INDEX idx_movie_director_name ON MM_Movies(directorName);
+CREATE INDEX idx_movie_average_rating ON MM_Movies(average_rating);
+
+-- MM_Actors --
+CREATE INDEX idx_actor_name ON MM_Actors(actor_name);
 -- Indexes End--
