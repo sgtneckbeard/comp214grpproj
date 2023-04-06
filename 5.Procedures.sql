@@ -157,3 +157,59 @@ END;
 BEGIN
     get_top_rated_movie();
 END;
+
+
+
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+-- THIS PROCEDURE WORKS ON ORACLE XE IN ORDER FOR JAVA FRONT END
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+CREATE OR REPLACE PROCEDURE get_top_rated_movie
+IS
+    v_movie_id    mm_movies.movie_id%TYPE;
+    v_movie_title mm_movies.movie_title%TYPE;
+    v_avg_rating  mm_movies.average_rating%TYPE;
+    
+    CURSOR cur_rating IS
+    SELECT RPAD(movie_id,4), RPAD(movie_title,50), average_rating
+    FROM (
+        SELECT movie_id, movie_title, average_rating
+        FROM mm_movies
+        ORDER BY average_rating DESC
+    ) WHERE ROWNUM <= 5;
+   
+    no_rating_found EXCEPTION;
+   
+BEGIN
+    OPEN cur_rating;
+        DBMS_OUTPUT.PUT_LINE('Top 5 Movies');
+    LOOP
+        FETCH cur_rating INTO v_movie_id, v_movie_title, v_avg_rating;
+        EXIT WHEN cur_rating%NOTFOUND;
+        
+        -- Display the movie information
+        DBMS_OUTPUT.PUT_LINE('Movie ID: ' || v_movie_id || '  Movie Title: ' || v_movie_title ||'  Average Rating: ' || v_avg_rating);
+    END LOOP;
+
+    CLOSE cur_rating;
+    
+-- Exception handling
+EXCEPTION
+    WHEN no_rating_found THEN
+        DBMS_OUTPUT.PUT_LINE('Error: No rating found');
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);
+END;
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+-----------------------------------------------------------------
