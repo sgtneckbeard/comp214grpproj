@@ -151,6 +151,9 @@ EXCEPTION
         DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);
 END;
 
+
+
+-- Calling the procedure
 BEGIN
     get_top_rated_movie();
 END;
