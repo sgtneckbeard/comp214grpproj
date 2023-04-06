@@ -11,7 +11,7 @@ CREATE OR REPLACE PACKAGE user_auth_pkg AS
 	FUNCTION login(p_username IN VARCHAR2, p_password IN VARCHAR2)RETURN BOOLEAN;
     
 END user_auth_pkg;
-
+/
 
 CREATE OR REPLACE PACKAGE BODY USER_AUTH_PKG AS
     -- Function to check if a given username and password match a user in the MM_Users table
