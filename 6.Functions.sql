@@ -23,6 +23,8 @@ EXCEPTION
 END;
 
 
+
+-- Test --
 DECLARE
    v_cursor SYS_REFCURSOR;
    v_movie_title MM_Movies.movie_title%TYPE;
@@ -76,6 +78,8 @@ EXCEPTION
 END;
 
 
+
+-- Test --
 DECLARE
    v_cursor SYS_REFCURSOR;
    v_movie_title MM_Movies.movie_title%TYPE;
