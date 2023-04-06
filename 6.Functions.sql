@@ -43,8 +43,8 @@ BEGIN
 END;
 
 
-------Function for getting movies from a certain Genre(WITH AN EXCEPTION HANDLER FOR INVALID GENRE )----------
 
+------Function for getting movies from a certain Genre(WITH AN EXCEPTION HANDLER FOR INVALID GENRE )----------
 CREATE OR REPLACE FUNCTION get_movies_by_genre(p_genre_name IN MM_Genres.genre_name%TYPE)
    RETURN SYS_REFCURSOR
 IS
@@ -74,7 +74,7 @@ EXCEPTION
       END IF;
       RAISE;
 END;
-/
+
 
 DECLARE
    v_cursor SYS_REFCURSOR;
@@ -97,7 +97,7 @@ BEGIN
          DBMS_OUTPUT.PUT_LINE(SQLERRM);
    END;
 END;
-/
+
 
 
 
