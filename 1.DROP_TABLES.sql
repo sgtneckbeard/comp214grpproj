@@ -17,3 +17,7 @@ DROP PROCEDURE add_movie;
 DROP PROCEDURE get_top_5;
 DROP FUNCTION get_movies_by_actor;
 DROP FUNCTION get_movies_by_genre;
+DROP PACKAGE BODY user_auth_pkg;
+DROP PACKAGE user_auth_pkg;
+DROP PACKAGE BODY MM_MANAGER_PKG;
+DROP PACKAGE MM_MANAGER_PKG;
