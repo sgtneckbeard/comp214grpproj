@@ -17,6 +17,7 @@
         <properties>
           <background color="-52"/>
           <font swing-font="DesktopIcon.font"/>
+          <toolTipText value=""/>
         </properties>
       </component>
       <component id="24776" class="javax.swing.JButton" binding="clearButton" default-binding="true">
@@ -27,6 +28,7 @@
           <foreground color="-48584"/>
           <hideActionText value="false"/>
           <text value="Clear"/>
+          <toolTipText value="Clear all text"/>
         </properties>
       </component>
       <component id="6b882" class="javax.swing.JButton" binding="fetchTop5Button">
@@ -35,6 +37,7 @@
         </constraints>
         <properties>
           <text value="Get Top 5 Movies"/>
+          <toolTipText value="List of the top highest 5 rated movies"/>
         </properties>
       </component>
       <component id="fedb0" class="javax.swing.JButton" binding="getMoviesByGenreButton" default-binding="true">
@@ -43,13 +46,16 @@
         </constraints>
         <properties>
           <text value="Get Movies by Genre"/>
+          <toolTipText value="Find movies based on the genre chosen"/>
         </properties>
       </component>
       <component id="c2c26" class="javax.swing.JComboBox" binding="genrebox">
         <constraints>
           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="1" use-parent-layout="false"/>
         </constraints>
-        <properties/>
+        <properties>
+          <toolTipText value="Choose a genre"/>
+        </properties>
       </component>
       <grid id="277f7" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
