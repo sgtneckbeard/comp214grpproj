@@ -21,6 +21,7 @@ EXCEPTION
    WHEN NO_DATA_FOUND THEN
       RAISE_APPLICATION_ERROR(-20001, 'Actor "' || p_actor_name || '" does not exist');
 END;
+/
 
 
 
@@ -43,6 +44,7 @@ BEGIN
    END LOOP;
    CLOSE v_cursor;
 END;
+/
 
 
 
@@ -76,6 +78,7 @@ EXCEPTION
       END IF;
       RAISE;
 END;
+/
 
 
 
@@ -101,7 +104,7 @@ BEGIN
          DBMS_OUTPUT.PUT_LINE(SQLERRM);
    END;
 END;
-
+/
 
 
 
