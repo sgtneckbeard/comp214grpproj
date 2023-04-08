@@ -43,19 +43,22 @@ BEGIN
         WHEN OTHERS THEN
             DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);
 END;
+/
 
--- Test code
 
+
+-- Test code --
 BEGIN
     add_movie(17, 3, 'Iron Man', 2008, 'Jon Favreau', null,
               'A billionaire industrialist and genius inventor who creates a suit of armor to become a superhero known as Iron Man.');
 END;
+/
+
 
 
 ------------------------------------------------------------------------------------------------------------
 -- 2. Procedure for getting top 5 movies by average rating from the mm_movies table with exception handling
 ------------------------------------------------------------------------------------------------------------
-
 create or replace PROCEDURE get_top_5
 IS
     v_movie_id    mm_movies.movie_id%TYPE;
@@ -94,10 +97,13 @@ EXCEPTION
     WHEN OTHERS THEN
         DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);
 END;
+/
 
--- Test code
+
+
+-- Test code --
 
 BEGIN
     get_top_5();
 END;
-
+/
