@@ -76,7 +76,7 @@ BEGIN
     user_auth_pkg.register_user('user2', 'password2', 'user2@example.com');
     DBMS_OUTPUT.PUT_LINE('User registered successfully');
 END;
-
+/
 ------------------Test Case for reset_password:
 BEGIN
     user_auth_pkg.reset_password('user2', 'new_password');
@@ -85,7 +85,7 @@ EXCEPTION
     WHEN OTHERS THEN
         DBMS_OUTPUT.PUT_LINE('Failed to reset password: ' || SQLERRM);
 END;
-
+/
 ------------------Test Case for authenticate_user:
 DECLARE
     v_result BOOLEAN;
@@ -97,7 +97,7 @@ BEGIN
         DBMS_OUTPUT.PUT_LINE('Authentication Failed');
     END IF;
 END;
-
+/
 ------------------Test Case for Login:
 DECLARE
     v_result BOOLEAN;
@@ -109,7 +109,7 @@ BEGIN
         DBMS_OUTPUT.PUT_LINE('Login Failed');
     END IF;
 END;
-
+/
 
 
 
