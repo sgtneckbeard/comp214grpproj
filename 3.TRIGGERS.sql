@@ -6,7 +6,7 @@ BEGIN
   INSERT INTO MM_MOVIEGENRE (movie_id, genre_id)
   VALUES (:NEW.movie_id, :NEW.genre_id);
 END;
-
+/
 
 
 -- Trigger to update average_rating column in mm_movies table when mm_ratings table is updated
@@ -45,7 +45,7 @@ COMPOUND TRIGGER
         g_rating_sum := 0;
     END AFTER STATEMENT;
 END TR_update_avg_rating;
-
+/
 
 
 -- Trigger to log errors in table
@@ -70,4 +70,4 @@ BEGIN
     END IF;
   END IF;
 END;
-
+/
