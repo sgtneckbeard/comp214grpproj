@@ -78,3 +78,4 @@ INSERT INTO MM_Movies (movie_id, movie_title, release_year, directorName, averag
 UPDATE MM_Movies SET movie_id = -2 WHERE movie_id = 1;
 
 SELECT * FROM error_log;
+/
