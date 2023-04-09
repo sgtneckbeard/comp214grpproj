@@ -71,3 +71,10 @@ BEGIN
   END IF;
 END;
 /
+
+-- Test code for TR_MM_Movies
+INSERT INTO MM_Movies (movie_id, movie_title, release_year, directorName, average_rating, description) VALUES (2, 'Terminator: Dark Fate', 2019, 'Tim Miller', 11, 'Sarah Connor and a hybrid cyborg human must protect a young girl from a newly modified liquid Terminator from the future.');
+
+UPDATE MM_Movies SET movie_id = -2 WHERE movie_id = 1;
+
+SELECT * FROM error_log;
